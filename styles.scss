@@ -6,13 +6,12 @@
 
 html {
 	font-size: 62.5%;
-	box-sizing: border-box;
 }
 
 body {
 	font-family: 'Poppins', sans-serif;
-	color: #444;
-	background-color: #f3f3f3;
+	color: #c2c2c2;
+	background-color: #474747;
 	height: 100vh;
 	padding: 2rem;
 }
@@ -36,7 +35,6 @@ nav {
 .login {
 	display: flex;
 	&__input {
-		border: none;
 		padding: 0.5rem 2rem;
 		font-size: 1.6rem;
 		font-family: inherit;
@@ -47,6 +45,12 @@ nav {
 		color: inherit;
 		border: 1px solid #fff;
 		transition: all 0.3s;
+		@media screen and (max-width: 500px) {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+		}
 		&:focus {
 			outline: none;
 			border: 1px solid #ccc;
@@ -86,6 +90,11 @@ nav {
 	/* NOTE This creates the fade in/out anumation */
 	opacity: 1;
 	transition: all 1s;
+
+	@media screen and (max-width: 500px) {
+		grid-template-columns: 1fr;
+		width: 100vw;
+	}
 }
 
 .balance {
@@ -100,21 +109,27 @@ nav {
 	}
 	&__date {
 		font-size: 1.4rem;
-		color: #888;
+		color: #a0a0a0;
 	}
 	&__value {
 		font-size: 4.5rem;
 		font-weight: 400;
+	}
+	@media screen and (max-width: 500px) {
+		grid-column: 1;
 	}
 }
 
 /* MOVEMENTS */
 .movements {
 	grid-row: 2 / span 3;
-	background-color: #fff;
+	background-color: #e7e7e7;
 	border-radius: 1rem;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	@media screen and (max-width: 500px) {
+		grid-row: 1;
+	}
 	&__row {
 		padding: 2.25rem 4rem;
 		display: flex;
@@ -141,6 +156,7 @@ nav {
 	&__value {
 		font-size: 1.5rem;
 		font-weight: 100;
+		color: #333;
 	}
 
 	&__date {
@@ -167,6 +183,7 @@ nav {
 	&__value {
 		font-size: 2.2rem;
 		margin-right: 2.5rem;
+		color: rgb(131, 131, 131);
 		&--in,
 		&--interest {
 			color: #66c873;
